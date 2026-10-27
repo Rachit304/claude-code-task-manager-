@@ -1,6 +1,6 @@
 # Taskflow — Claude Code Practice Project
 
-A small, dependency-free task manager built with HTML, CSS, and vanilla JavaScript. It is intentionally simple so you can practice asking Claude Code to understand, test, improve, and refactor an existing codebase.
+A small task manager built with React, Vite, and plain CSS. It is intentionally simple so you can practice asking Claude Code to understand, test, improve, and refactor an existing codebase.
 
 ## Features included
 
@@ -14,18 +14,24 @@ A small, dependency-free task manager built with HTML, CSS, and vanilla JavaScri
 
 ## Run it locally
 
-No package installation or build step is required.
-
-1. Extract this folder.
-2. Open `index.html` in a browser.
-
-For a local development server, if Python is installed, run this command from the project folder:
+The app is built with React and Vite. Node.js 18 or later is required.
 
 ```bash
-python -m http.server 8000
+npm install
+npm run dev
 ```
 
-Then open `http://localhost:8000`.
+Then open the URL Vite prints (usually `http://localhost:5173`).
+
+To create a production build, run `npm run build`. The output goes to `dist/`, and `npm run preview` serves it locally.
+
+## Project structure
+
+- `src/main.jsx` — React entry point
+- `src/App.jsx` — task state, filtering, and persistence
+- `src/components/` — `Header`, `Summary`, `TaskForm`, `TaskList`, `TaskItem`
+- `src/api/taskStore.js` — the only module that touches `localStorage`; replace it with API calls when adding a backend
+- `src/styles.css` — all styling
 
 ## Start Claude Code
 
